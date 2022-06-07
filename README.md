@@ -72,9 +72,9 @@ Algorithmic Topology is the field of study that quantifies, investigates, and ev
 a seeming paradox in the calculation of computational complexity by representing the execution of
 an algorithm in terms of its data flow.
 
-A Vertex is a size 1 tuple (0-simplex)
-An Edge is a size 2 tuple of verticies (1-simplex)
-An n-Path is a size n tuple of n-edges sequentially connected head to tail
-A rank n Flow is a set of k-paths for k < n
-A Graph $G = (V, E)$ is completely determined by the adjacency bijection $(V, E) \mapsto A$
-The unweighted adjacency matrix $A$ is a key topological invariant, and generates the walk matrix $W$
+* A Vertex is a size 1 tuple (0-simplex)
+* An Edge is a size 2 tuple of verticies (1-simplex)
+* An n-Path is a size n tuple of n-edges sequentially connected head to tail
+* A rank n Flow is a set of k-paths for k < n
+* A Graph $G = (V, E)$ is completely determined by the adjacency bijection $(V, E) \mapsto A$
+* The unweighted adjacency matrix $A$ is a key topological invariant, and generates the walk matrix $W$
