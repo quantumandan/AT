@@ -1,12 +1,12 @@
 Algorithmic Topology
 ====================
 
-Re-applying the work of Hamilton and Grassmann, we define a novel enumerative string algebra and 
-couch it in over a hundred years of well explored mathematical physics. Reappropriating the
-mathematical vernacular of work and energy, the operation of a Turing machine is recast in terms
-of the evolution operator of a dynamical system, the trajectories of which generate a (data) flow algebra.
-This representation provides an unambiguous framework for provably optimal graph traversal; and
-Hamiltonian cycle calculation in **"naively"** polynomial time.
+Re-applying the work of Hamilton and Grassmann, with deep inspiration from Lie and Noether and Turing,
+a novel enumerative string algebra is defined and couched in the mathematical vernacular of work and 
+energy. The action of a Turing machine's successor function is recast in terms of the evolution operator
+of a dynamical system, the trajectories of which generate a (data) flow algebra. This representation
+provides an unambiguous framework for provably optimal graph traversal; and k-cycle calculation in
+**"naively"** polynomial time.
 
 Algorithmic Topology is the field of study that quantifies, investigates, and eventually resolves
 this seeming paradox in the calculation of computational complexity by representing the execution of
@@ -57,8 +57,8 @@ $(a, b) \times ((b, d) + (b, f)) =$ {$(a, b)(b, d),\space (a, b)(b, f)$}
 The graph generating this idiotically simple algebra, by replacing numbers with shapes, is identified with
 a simplicial complex.
 
-Pulling a rabbit out of hats
-----------------------------
+Pulling a rabbit out of a hats
+------------------------------
 
 The fundamental intuition is that every algebra of symbols is the generator for a bialgebraic structure
 of containers holding a single symbol. The key insight is that while these container algebras satisfy
