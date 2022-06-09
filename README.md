@@ -8,9 +8,9 @@ of a dynamical system, the trajectories of which generate a (data) flow algebra.
 provides an unambiguous framework for provably optimal graph traversal; and k-cycle calculation in
 **"naively"** polynomial time.
 
-Algorithmic Topology is the field of study that quantifies, investigates, and eventually resolves
-this seeming paradox in the calculation of computational complexity by representing the execution of
-an algorithm in terms of its (data)flow.
+Algorithmic Topology eventually resolves this seeming paradox in the calculation of computational complexity
+by representing the execution of an algorithm in terms of its (data)flow, and restricting the configuration
+space to those systems which obey conservation of energy.
 
 Flow algebra
 ------------
