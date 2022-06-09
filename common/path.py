@@ -34,22 +34,37 @@ class iPath(iGraph):
 class Path(iPath):
     """
     A path is a subgraph with all vertices of degree 1 or 2 or 3
+
+    TODO: The above is not rigorously true, nor sufficient for the definition of a path.
+          This is a poor heuristic definition and the documentation should be rewritten
     """
 
     @property
     def tail(self):
+        """
+        First edge of the path
+        """
         return itertoolz.first(self.es)
 
     @property
     def tailv(self):
+        """
+        Tail of the first edge of the path
+        """
         return self.tail.tuple[0]
 
     @property
     def head(self):
+        """
+        Last edge of the path
+        """
         return itertoolz.last(self.es)
 
     @property
     def headv(self):
+        """
+        Head of the last edge of the path
+        """
         return self.head.tuple[-1]
 
     @property

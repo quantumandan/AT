@@ -61,6 +61,10 @@ class iEpsilon:
         raise NotImplementedError(self.__doc__)
 
     def __to_iGraph__(self, cast_cls=iGraph):
+        """
+        Recreates the local graph from the epsilon neighborhoods.
+        """
+
         def outflow():
             return cast_cls(
                 (v_src, v_trgt)
@@ -79,6 +83,9 @@ class iEpsilon:
         return inflow() | outflow()
 
     def __to_dash__(self):
+        """
+        TODO: Refactor this functionality out as a mixin class
+        """
         return self.factory(self.__to_iGraph__())
 
     def __to_json__(self):
@@ -86,6 +93,9 @@ class iEpsilon:
 
     @classmethod
     def from_graph(cls, graph: iGraph):
+        """
+        Factory function to create an epsilon neighborhood from a graph.
+        """
         plus = dict()
         minus = dict()
         for e in graph.es:

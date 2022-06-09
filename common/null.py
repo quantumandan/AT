@@ -119,6 +119,8 @@ class Null(iNull):
     to the algebra that declares it. This will become a necessary subtly when we switch to cyclic bases.
     """
 
+    # TODO: implement a null element for the cyclic basis
+    # TODO: implement descriptor that calculates the index of the epsilon neighborhood as a function of rank and nullity
     atlas = Morphism()  # local coordinate atlas
 
     @property

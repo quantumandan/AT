@@ -3,9 +3,6 @@ import json
 from .graph import iGraph
 from .epsilon import Epsilon
 from .path import Path
-
-# from common.null import iNull
-# from cytoolz import itertoolz
 from itertools import chain, product
 from typing import *
 
@@ -13,7 +10,8 @@ from typing import *
 @dataclass
 class iFlow(set):
     """
-    A flow is literally a set of paths...with a distributive algebra and maybe infinitesimals
+    Flow algebras are sets of paths representing morphisms between n-categories of algebraic structures.
+    These structures might contain infinitesimals.
     """
 
     def __init__(self, args, archimedean=True):
@@ -29,16 +27,26 @@ class iFlow(set):
         return "+ ".join(map(tostr, self))
 
     def __eq__(self, X):
+        """
+        Defaults to cyclic basis. This the cannonical definition of equality but will not be evident in the
+        theory until much later.
+        """
         sdiff = self.symmetric_difference(X)
         return True if len(sdiff) == 0 else False
 
     @property
     def epsilon(self):
+        """
+        Calculate the epsilon neighborhoods of the flow's paths.
+        """
         g = self.__to_iGraph__()
         return Epsilon.from_graph(g)
 
     @classmethod
     def factory(cls, *args, **kwargs):
+        """
+        Variadic factory method for creating a Flow.
+        """
         return cls(args, **kwargs)
 
     def __to_dash__(self):
@@ -58,6 +66,10 @@ class iFlow(set):
 
 
 class Flow(iFlow):
+    """
+    A flow is literally a set of paths...with a distributive algebra and maybe infinitesimals
+    """
+
     def __add__(self, flow):
         if isinstance(flow, Path):
             return Flow(chain(self, flow), archimedean=self._archimedean)
@@ -74,7 +86,13 @@ class Flow(iFlow):
         return Flow(distributed, archimedean=archimedean)
 
     def pushg(self, graph):
+        """
+        Outflow
+        """
         return Flow(chain.from_iterable(x.pushg(graph) for x in self))
 
     def pullg(self, graph):
+        """
+        Inflow
+        """
         return Flow(chain.from_iterable(x.pullg(graph) for x in self))

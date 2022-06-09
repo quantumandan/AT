@@ -42,6 +42,8 @@ class iGraph(Graph):
     def __to_dash__(self):
         """
         Quick and dirty parsing for rendering in a Dash app
+
+        TODO: Break this fumctionality out as a mixin class
         """
         nodes = [
             {
