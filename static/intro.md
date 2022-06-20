@@ -233,7 +233,7 @@ Almost Finite rational polynomials correspond to those *polynomial-expressible* 
 ### *Rube Goldberg's Lemma*
 You can always make a simple problem harder than it needs to be.
 
-### *Dan's Corollary*
+### *Dan's Conjecture*
 Sometimes there's no shorter explanation than the journey of discovery
 
 ## **Proposition 5**
@@ -286,7 +286,10 @@ In other words, for any algorithm with finite order transition graph, $\mathbf{P
 
 # 1. Paradox as a Laboratory
 
-The importance of Cartesian closed algebras is that they preserve cardinal arithmetic in the inductive limit. Therefore, the first step to obtaining an explanation to the **Motivating Case** is to create a complexity hierarchy that is invariant under the exchange of Cartesian closed algebras. However, bi-Cartesian closed algebras carry, through their inductive completeness, extra information which we will find to be the source of our confusion, necessitating a subtler interpretation and analysis of asymptotic complexity.
+The importance of Cartesian closed algebras is that they preserve cardinal arithmetic in the inductive limit. Therefore, the first step to obtaining an explanation to the **Motivating Case** is to create a complexity hierarchy that is invariant under the exchange of Cartesian closed algebras. 
+
+Standard category theoretical constructs of set algebras will fail to be Cartesian closed, but transitioning to categories built by simplicial sets -- a
+bialgebraic structure -- that shares arithmetical rules with the objects that generate its HOM set, we arrive at a bi-Cartesian closed algebra on the automorphism group. However, bi-Cartesian closed algebras carry, through their inductive completeness, extra information which we will find to be the source of our confusion, necessitating a subtler interpretation and analysis of asymptotic complexity.
 
 We're staring at two sides of infinity across the inner and outer automorphism groups.
 

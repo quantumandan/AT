@@ -82,6 +82,7 @@ class Path(iPath):
         if isinstance(X, Path):
             return Path(self.tuples + X.tuples) if self.headv == X.tailv else Path([])
         else:
+            # distributivity is as easy as it is hard with duck typing, I leave this for tomorrow
             raise Exception(type(X))
 
     def __add__(self, X):

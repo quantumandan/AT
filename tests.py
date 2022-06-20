@@ -2,7 +2,7 @@ import unittest
 from common.graph import iGraph
 from common.epsilon import Epsilon
 from common.null import iNull
-from flow import Path, Flow
+from vuln import Path, Flow
 from igraph import Graph
 from cytoolz import dicttoolz
 from itertools import chain

@@ -26,6 +26,18 @@ class iFlow(set):
         tostr = lambda element: "".join(str(tpl) for tpl in element)
         return "+ ".join(map(tostr, self))
 
+    def __add__(self, flow):
+        """
+        Defaults to the cyclic basis
+        """
+        # FIXME Flow + Path should be handled as an __radd__ of Path.
+        if isinstance(flow, Path):
+            return Flow(chain(self, flow), archimedean=self._archimedean)
+        return Flow(
+            set.symmetric_difference(self, flow),
+            archimedean=(self._archimedean or flow._archimedean),
+        )
+
     def __eq__(self, X):
         """
         Defaults to cyclic basis. This the cannonical definition of equality but will not be evident in the
@@ -71,10 +83,13 @@ class Flow(iFlow):
     """
 
     def __add__(self, flow):
+        """
+        Defaults to Kleene basis
+        """
         if isinstance(flow, Path):
             return Flow(chain(self, flow), archimedean=self._archimedean)
         return Flow(
-            set.symmetric_difference(self, flow),
+            set.union(self, flow),
             archimedean=(self._archimedean or flow._archimedean),
         )
 

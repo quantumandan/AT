@@ -18,6 +18,11 @@ class iGraph(Graph):
         Defaults to minimum index of the underlying igraph.Graph. This will break with
         string based indexing (so TBD)
         """
+        # FIXME this is extremely brittle and it needs to be made explicit that vertex ids
+        #       draw from the pullback of the automorphism group acting on the simple space.
+        #       Furthermore, re-using the igraph term of index will be contradictory to our
+        #       notion of index (Atiyah & Singer).
+        # TODO: implement vertex id as a subclass of uuid with localization conditions (re __eq__)
         return min(v.index for v in self.vs)
 
     # We should prolly implement these properties and cast to a custom vertex and edge class

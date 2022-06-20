@@ -25,6 +25,9 @@ class iProxy:
     def __set__(self, obj, value):
         pass
 
+    def __del__(self, obj):
+        pass
+
     def __getitem__(self, key):
         pass
 
@@ -43,6 +46,11 @@ class Morphism(dict):
         return list(self.keys())
 
     def get_kernel(self, null):
+        """
+        That the kernel is parameterized by definition of null is key to understanding how the zero and one
+        (additive and multiplicative identities) can switch roles depending on the topological space under
+        consideration.
+        """
         return list(k for k, v in self.items() if v == null)
 
     # TBD: unfortunately, we'll prolly need info about morphism, this might be a hack to accomplish that
